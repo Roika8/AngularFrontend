@@ -1,0 +1,30 @@
+<mat-list>
+    <mat-list-item *ngFor="let image of images" class="listView">
+
+        <div class="imageInList">
+            <img src='{{image.imageUrl}}' alt="Photo" class="imageInList zoom" />
+        </div>
+        <div class="title">
+            <div mat-line><small>Title: <br /></small> {{image.title}}</div>
+        </div>
+        <div class="description">
+            <div mat-line> <small>description: <br /></small> {{image.description}} </div>
+        </div>
+        <div class="location">
+            <div mat-line><i class="bi bi-geo-alt" (click)="onMapOpen(image.location)"></i><br />Location</div>
+        </div>
+        <div class="categories">
+            <div mat-line> <i class="bi bi-tags"></i><br />{{image.category}} </div>
+        </div>
+        <div class="btnEditWrap">
+            <div style="margin-bottom: 10px;">
+                <favorite-check [disable]=true [isChecked]=image.isFavorite></favorite-check>
+                <private-check [disable]=true [isChecked]=image.isPrivate></private-check>
+            </div>
+
+            <button mat-raised-button type="button" class="editBtn" (click)="editImage(image)"><i
+                    class="bi bi-pencil"></i></button>
+        </div>
+
+    </mat-list-item>
+</mat-list>

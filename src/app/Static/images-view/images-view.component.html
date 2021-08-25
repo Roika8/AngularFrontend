@@ -1,0 +1,46 @@
+<div class="mainContainer">
+    <h1 style="font-weight: bolder; font-size: xx-large;">{{title}}</h1>
+
+
+    <div *ngIf="!startSlideShow" class="searchContainer">
+        <div class="toggleWrap" *ngIf="!startSlideShow">
+            <mat-slide-toggle [color]="'primary'" [checked]=view [disabled]="false" (change)="onViewChange()">
+                <span *ngIf="view">List</span>
+                <span *ngIf="!view">Grid</span>
+            </mat-slide-toggle>
+        </div>
+        <div class="slideshowButton">
+            <button mat-raised-button color="primary" (click)="slideShow()">Start slideshow</button>
+        </div>
+
+        <!-- //Serachbar -->
+        <div *ngIf="!startSlideShow" class="searchWrap">
+            <!-- Search by category -->
+            <categories-search (change)='searchByCategory($event)'></categories-search>
+            <!-- SearchByName -->
+            <mat-form-field appearance="fill" class="inputText" style="margin-left: 60px;">
+                <input matInput type="text" placeholder="Search by name" (keyup)="searchByName($event)">
+            </mat-form-field>
+        </div>
+    </div>
+    <div *ngIf="startSlideShow">
+        <button mat-raised-button color="warn" (click)="slideShow()">Exit slideshow</button>
+    </div>
+    <h4 *ngIf="images.length===0">There are no photos to display</h4>
+
+    <div class="spinnerBar" *ngIf="isLoading">
+        <mat-progress-spinner class="spinnerBar" mode="indeterminate" color="primary"></mat-progress-spinner>
+    </div>
+
+    <div *ngIf="startSlideShow">
+        <carousel [images]="shuffledImages"></carousel>
+    </div>
+    <div *ngIf="!startSlideShow">
+        <div *ngIf="view">
+            <list-view [images]="images"></list-view>
+        </div>
+        <div *ngIf="!view">
+            <cards-view [images]="images"></cards-view>
+        </div>
+    </div>
+</div>

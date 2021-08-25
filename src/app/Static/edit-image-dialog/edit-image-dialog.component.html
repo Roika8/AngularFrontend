@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Edit image </h1>
+<form class="formWrapper" #f="ngForm" (ngSubmit)="submit(f)">
+    <div mat-dialog-content>
+        <mat-form-field class="inputText" appearance="fill">
+            <mat-label>Title:</mat-label>
+            <input matInput type="text" required maxlength="40" ngModel={{imageProp.title}} name="title"
+                #title="ngModel" />
+            <mat-hint>Title length cannot be more the 40 characters</mat-hint>
+        </mat-form-field>
+
+
+        <div class="favoritePrivate">
+            <div class="element">
+                <favorite-check [isChecked]="imageProp.isFavorite" (change)="onFavoriteChange($event)"></favorite-check>
+            </div>
+            <div class="element">
+                <private-check [isChecked]="imageProp.isPrivate" (change)="onPrivateChange($event)"></private-check>
+            </div>
+        </div>
+        <mat-hint style="font-size: x-small;margin-left: 2%; ">Select image as favorite or private</mat-hint>
+
+
+        <div>
+            <button mat-raised-button type="button" class="openMapBtn" (click)="onMapOpen()">Open map</button>
+            <mat-hint>Click to open map</mat-hint>
+            <!-- Category -->
+            <div class="categoryWrap">
+                <categories-search (change)='selectedCategories($event)' [categories]=imageProp.category></categories-search>
+            </div>
+
+            <!-- Description -->
+            <mat-form-field appearance="fill" class="inputText">
+                <mat-label>Description:</mat-label>
+                <textarea name="description" matInput ngModel={{imageProp.description}} rows="2" maxlength=150
+                    name="description" #description="ngModel"></textarea>
+                <mat-hint>Max length is 150 characters</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <!-- Description -->
+    </div>
+    <div mat-dialog-actions class="buttonsWrapper">
+        <button mat-button type="button" (click)="noClick()">I regret</button>
+        <button mat-button [mat-dialog-close] type="submit" cdkFocusInitial>Save changes</button>
+    </div>
+</form>

@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Choose location</h2>
+<mat-dialog-content class="mat-typography">
+    <location-map (chosenLng)="handleLng($event)" (chosenLat)="handleLat($event)" [lat]="data.lat" [lng]="data.lng"
+        [viewOnly]="data.viewOnly">
+    </location-map>
+</mat-dialog-content>
+
+<mat-dialog-actions class="buttons" *ngIf="!data.viewOnly">
+    <button mat-button (click)="onNoClick()">I dont want to choose</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
+<mat-dialog-actions class="buttons" *ngIf="data.viewOnly">
+    <button mat-button (click)="onNoClick()">Exit</button>
+</mat-dialog-actions>

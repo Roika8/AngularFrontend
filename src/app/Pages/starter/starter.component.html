@@ -1,0 +1,71 @@
+<div class="container">
+    <mat-stepper orientation="vertical">
+        <mat-step>
+            <ng-template matStepLabel>Step 1</ng-template>
+            <ng-template matStepContent>
+                <section class="seleced" [formGroup]="access">
+                    <h2>Allow accessibility:</h2>
+                    <p>
+                        <mat-checkbox [color]='"primary"' formControlName="deviceLocation">Allow device location
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox [color]='"primary"' formControlName="deviceCamera">Allow device Camera
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox [color]='"primary"' formControlName="privateMode" #privateMode>Allow private mode
+                        </mat-checkbox>
+                    </p>
+
+                    <small>Disallow one of the list here might distribute user experience </small>
+                </section>
+                <div>
+                    <mat-form-field appearance="fill" [hidden]="!privateMode.checked">
+                        <input matInput type="text" placeholder="Private mode password" [(ngModel)]="password"
+                            name="password">
+                    </mat-form-field>
+                </div>
+                <button mat-button color="primary" matStepperNext>Next</button>
+            </ng-template>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Step 2</ng-template>
+            <ng-template matStepContent>
+                <form class="starterForm" #f="ngForm" (ngSubmit)="Submit(f)">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <input matInput type="text" placeholder="Library name" ngModel required #name="ngModel"
+                                name="name">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <textarea matInput type="text" placeholder="description" ngModel required
+                                #description="ngModel" name="description"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div>
+
+                        <div style="font-size: small; margin-bottom: 10px;">Select a default view</div>
+                        <mat-radio-group name="viewSelect" ngModel [(ngModel)]="viewValue">
+                            <mat-radio-button value="1">
+                                Grid
+                            </mat-radio-button>
+                            <mat-radio-button value="2">
+                                List
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="buttons">
+                        <button mat-button color="warn" matStepperPrevious>Back</button>
+                        <button mat-button color="primary" matStepperNext type="submit">Sumbit</button>
+                    </div>
+
+                </form>
+            </ng-template>
+        </mat-step>
+
+    </mat-stepper>
+</div>

@@ -1,0 +1,44 @@
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+mat-toolbar {
+    background-color: rgba(30, 174, 206, 0.673);
+    height: 7%;
+    color: white;
+}
+
+mat-sidenav {
+    border-right: none;
+    margin: 16px;
+    width: 8%;
+    background-color: rgba(147, 73, 30, 0.66);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+mat-sidebar-container {
+    height: calc(100vh - 65px);
+}
+
+.content {
+    height: calc(100vh - 98px);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.menuButtons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.topNavToggler {
+    width: 90%;
+    text-align: right;
+}

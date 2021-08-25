@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Access requried</h1>
+<div mat-dialog-content>
+  <p>What's your private album password?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Password:</mat-label>
+    <input matInput [(ngModel)]="data.password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="noClick()">I dont know</button>
+  <button mat-button [mat-dialog-close]="data.password" cdkFocusInitial>Enter</button>
+</div>

@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div class="title">
+        {{libraryName}}
+    </div>
+    <div class="description">
+        <small style="text-decoration: underline;">Description:</small>
+        <br />
+        {{description}}
+    </div>
+    <div class="views">
+        <div style="text-decoration: underline;">Defualt view</div>
+        <br />
+        <mat-radio-group aria-label="Select an option" [disabled]=true>
+            <mat-radio-button value="1" [checked]="!defultView">Grid</mat-radio-button>
+            <mat-radio-button value="2" [checked]="defultView">List</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>

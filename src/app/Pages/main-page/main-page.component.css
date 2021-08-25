@@ -1,0 +1,63 @@
+.mainContainer {
+    position: absolute;
+    text-align: center;
+}
+
+.searchContainer {
+    margin: 0 auto;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content>mat-card {
+    width: 200px;
+}
+
+.imagesSetup {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 10px;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.column-label {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.spinnerBar {
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.zoom {
+    transition: transform .6s;
+    /* Animation */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.6);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.headerWrapper{
+    position:relative;
+}
+.imageSettings{
+   display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.imageTitle{
+    display: flex;
+    flex: 4;
+}

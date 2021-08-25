@@ -1,0 +1,68 @@
+<h1>Image setup</h1>
+
+
+<div class="formWrapper">
+    <div class="spinnerBar" *ngIf="isLoading">
+        <mat-progress-spinner class="spinnerBar" mode="indeterminate" color="primary"></mat-progress-spinner>
+    </div>
+    <div class="formLeft">
+        <!-- Image -->
+        <img src="{{imageUrl}}" class="imageStyle" />
+
+        <!-- Image -->
+    </div>
+    <div class="formRight">
+        <form class="imageForm" #f="ngForm" (ngSubmit)="Submit(f)">
+            <!-- Title  -->
+            <div>
+                <mat-form-field appearance="fill" class="inputText">
+                    <mat-label>Title</mat-label>
+                    <input type="text" id="title" matInput placeholder="Ex. My trip to Israel" name="title"
+                        #title="ngModel" maxlength="40" required ngModel>
+                    <mat-hint>Title length cannot be more the 40 characters</mat-hint>
+                </mat-form-field>
+                <div class="errorMsg" *ngIf="title.touched&&!title.valid">Title is requried</div>
+            </div>
+            <!-- Title  -->
+
+
+            <!-- Is favorite -->
+            <div class="favoritePrivate">
+                <div class="element">
+                    <favorite-check [isChecked]=isFavorite (change)="onFavoriteChange($event)"></favorite-check>
+                </div>
+                <div class="element element2">
+                    <private-check [isChecked]=isPrivate (change)="onPrivateChange($event)"></private-check>
+                </div>
+
+            </div>
+            <div>
+                <mat-hint style="font-size: x-small; ">Select image as favorite or private</mat-hint>
+            </div>
+            <!-- //Location -->
+            <button mat-raised-button type="button" class="sumbitBtn" (click)="onMapOpen()">Open map</button>
+            <mat-hint>Chose image location on the map</mat-hint>
+
+
+
+            <categories-search (change)='selectedCategories($event)'></categories-search>
+
+
+            <!-- Description -->
+            <div>
+                <mat-form-field appearance="fill" class="inputText">
+                    <textarea ngModel name="description" #description="ngModel" matInput
+                        placeholder="Here you can add youe image description" rows="3" maxlength=150></textarea>
+                    <mat-hint>Max length is 150 characters</mat-hint>
+
+                </mat-form-field>
+
+            </div>
+            <!-- Description -->
+
+
+
+            <button mat-raised-button [disabled]="!f.valid" class="sumbitBtn">Add image</button>
+        </form>
+    </div>
+</div>

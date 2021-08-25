@@ -1,0 +1,52 @@
+<images-view [imagesType]="1"></images-view>
+
+<!-- <h1>Private Mode</h1>
+
+<div fxHide.lt-md>
+    <span class="column-label">Columns</span>
+    <mat-slider [max]="10" [min]="1" [(ngModel)]="gridColumns" [thumbLabel]="true">
+    </mat-slider>
+</div>
+<div class="spinnerBar" *ngIf="isLoading">
+    <mat-progress-spinner class="spinnerBar" mode="indeterminate" color="primary"></mat-progress-spinner>
+</div>
+<div class="content">
+
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let image of images">
+            <mat-card class="mat-elevation-z4">
+                <mat-card-header fxLayout="row">
+                    <mat-card-title>{{image.title}} </mat-card-title>
+                        <favorite-check class="imageMode" [disable]=true [isChecked]=image.isFavorite></favorite-check>
+                        <private-check class="imageMode" [disable]=true [isChecked]=image.isPrivate></private-check>
+                </mat-card-header>
+                <img src='{{image.imageUrl}}' alt="Photo" class="imagesSetup zoom" />
+                <mat-card-content>
+                    <h6>Description</h6>
+
+                    <p>
+                        {{image.description}}
+                    </p>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        <small>{{image.location}}</small>
+
+                    </div>
+                    <div>
+                        <i class="bi bi-tags"></i>
+                        <small>{{image.category}}</small>
+
+                    </div>
+                    <div>
+                        <i class="bi bi-calendar3"></i>
+                        <small>Date time</small>
+                    </div>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div> -->

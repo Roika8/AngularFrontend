@@ -1,0 +1,69 @@
+<h1>Edit categories:</h1>
+<div class="mainWrapper">
+    <div class="categoriesSelect">
+        <div class="mainButtons">
+            <button mat-button (click)="accordion.openAll()">Expand All</button>
+            <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+        </div>
+        <mat-accordion multi>
+            <mat-expansion-panel class="accordion">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Add category
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <i class="bi bi-tags"></i>
+                        Click and type a new category that you wants to add
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="dataInput">
+                    <mat-form-field appearance="fill" class="inputCategory">
+                        <input type="text" id="title" matInput placeholder="Add category.." maxlength="15" #newCategory>
+                    </mat-form-field>
+                    <button (click)="addCategory(newCategory)" [disabled]="!newCategory.value" class="btn">Add</button>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="accordion">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Delete category
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <i class="bi bi-tags"></i>
+                        Click and type a category that you wants to delete
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="dataInput">
+                    <mat-form-field appearance="fill" class="inputCategory">
+                        <input type="text" id="title" matInput placeholder="Delete category.." maxlength="15"
+                            #categoryName>
+                    </mat-form-field>
+                    <button (click)="deleteCategory(categoryName)" [disabled]="!categoryName.value"
+                        class="btn">Delete</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="categoriesWrap">
+        <h3 style="text-align: center;">All categories:</h3>
+        <cdk-virtual-scroll-viewport itemSize="5" class="scrollerContainter">
+            <div *ngFor="let category of categories" class="categoryInScroll">
+                {{category}}
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
+
+    <!-- <div class="categoriesList"> -->
+    <!-- <cdk-virtual-scroll-viewport itemSize="10000" class="categoriesScroller">
+            <div *cdkVirtualFor="let category of categories" class="categoryInScroll">{{category}}</div>
+        </cdk-virtual-scroll-viewport> -->
+
+
+
+    <!-- Category -->
+    <!-- <h3> All categories</h3>
+        <mat-list role="list" *ngFor="let category of categories ">
+            <mat-list-item role="listitem"> {{category}} </mat-list-item>
+        </mat-list> -->
+    <!-- </div> -->
+</div>

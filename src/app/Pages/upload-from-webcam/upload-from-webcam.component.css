@@ -1,0 +1,31 @@
+.actionBtn {
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.sumbitBtn {
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+
+}
+
+.btnsWrapper {
+    padding: 20px;
+}
+
+.imagesWrapper {
+    display: flex;
+}
+
+.image {
+    flex: 1;
+}
+
+.snappedImage {
+    height: 400px;
+    width: 533px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}

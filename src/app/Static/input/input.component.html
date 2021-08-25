@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>{{label}}</mat-label>
+    <input #textValue type={{type}} matInput placeholder={{placeHolder}} [required]=isRequired (change)=onTextChanged(textValue.value)>
+    <mat-hint>{{hint}}</mat-hint>
+    <mat-error>
+        {{error}}
+    </mat-error>
+</mat-form-field>

@@ -1,0 +1,15 @@
+<h1>Upload from your local device</h1>
+
+<form>
+    <div>
+        <input class="form-control" type="file" (change)="onFileUploadChange($event)">
+        <div *ngIf="imageUrl">
+            <img src="{{imageUrl}}" class="uploadedImage">
+
+        </div>
+    </div>
+    <button mat-raised-button (click)="SetImageClick()" color="primary" [disabled]="!validImage"
+        routerLink="/image-setup">
+        Upload image
+    </button>
+</form>

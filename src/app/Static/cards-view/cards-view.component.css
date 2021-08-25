@@ -1,0 +1,60 @@
+.mainContainer {
+    position: absolute;
+    text-align: center;
+}
+
+.content {
+    padding: 16px;
+}
+
+.imagesSetup {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 10px;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.column-label {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.zoom {
+    transition: transform .6s;
+    /* Animation */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+}
+
+.headerWrapper {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.imageSettings {
+    flex: 1;
+}
+
+.imageTitle {
+    flex: 4;
+    font-size: medium;
+}
+
+.locationWrap {
+    margin: 0 auto;
+    width: 30%;
+}
+
+.categoriesnWrap {
+    margin: 0 auto;
+    width: fit-content;
+}

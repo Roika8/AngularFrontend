@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>
+      menu
+    </mat-icon>
+
+  </button>
+  <div style="margin-left: 20px;">{{librayName}}</div>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <a mat-button routerLink="/">Home</a>
+    <button mat-button [matMenuTriggerFor]="menu1">General</button>
+    <mat-menu #menu1="matMenu" class="menuButtons">
+      <a class="dropdown-item" routerLink="/settings">Settings</a>
+      <a class="dropdown-item" routerLink="/about">About</a>
+
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="menu2">Upload</button>
+    <mat-menu #menu2="matMenu" class="menuButtons">
+      <a class="dropdown-item" routerLink="/upload-from-api">Google</a>
+      <a class="dropdown-item" routerLink="/upload-from-webcam">Web-cam</a>
+      <a class="dropdown-item" routerLink="/upload-from-local">My PC</a>
+    </mat-menu>
+    <a mat-button routerLink="/private-mode">Private Album</a>
+    <a mat-button routerLink="/favorite-mode">favorites</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container content">
+      <ng-content>
+      </ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+.seleced {
+    padding: 1%;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+.buttons {
+margin-top: 20px;
+}

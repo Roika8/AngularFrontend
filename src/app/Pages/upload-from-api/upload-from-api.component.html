@@ -1,0 +1,46 @@
+<h2>Search for an image from google</h2>
+<div class="card-header main-search">
+    <div class="row">
+        <div class="col-12 col-md-3 col-xl-3">
+            <input [(ngModel)]="searchData" class="AutoFocus form-control" placeholder="Type something..." type="text">
+        </div>
+        <div class="col-12 col-md-3 col-xl-3">
+            <input name="deliveryNumber" [(ngModel)]="perPage" class="AutoFocus form-control" placeholder="No of Images"
+                type="number">
+        </div>
+        <div class="col-12 col-md-3 col-xl-3">
+            <button (click)="search()" class="searchBtn">
+                <i class="bi bi-search"></i>
+            </button>
+            <!-- <input type="button" (click)="search()" value="Search" class="searchBtn"> -->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="spinnerBar" *ngIf="isLoading">
+        <mat-progress-spinner class="spinnerBar" mode="indeterminate" color="primary"></mat-progress-spinner>
+    </div>
+    <div *ngIf="notFoundMsg">
+        {{notFoundMsg}}
+    </div>
+    <div class="row">
+        <div *ngFor="let pic of photos" class="col-sm-4">
+            <div style="margin-top: 10px;" class="card">
+                <img class="card-img-top" [src]=pic.src.landscape alt="Card image cap">
+                <div class="card-body">
+                    <!-- Get the images src value -->
+                    <button [value]="pic.src.original" class="btn btn-primary" (click)="submitImage($event)"
+                        routerLink="/image-setup">Choose me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <!-- <div>
+        <button mat-raised-button style="margin-top: 10px;" routerLink="/image-setup">Submit image</button>
+    </div>
+    <div>
+        <button mat-raised-button style="margin-top: 10px;">I want to the other</button>
+    </div> -->
+</div>

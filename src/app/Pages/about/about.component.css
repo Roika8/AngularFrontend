@@ -1,0 +1,24 @@
+.wrapper {
+    background-color: rgba(255, 247, 235, 0.707);
+    border: 1px solid gainsboro;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+}
+
+.title {
+    text-align: left;
+    margin-top: 10px;
+    font-size: xx-large;
+}
+
+.description {
+    font-size: large;
+    text-align: center;
+    margin-top: 20px;
+    font-style: oblique;
+}
+.views{
+    text-align: center;
+    margin-top: 60px;
+}

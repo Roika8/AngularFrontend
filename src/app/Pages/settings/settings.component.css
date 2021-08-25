@@ -1,0 +1,72 @@
+.mainWrapper {
+    display: flex;
+}
+
+.categoriesSelect {
+    flex: 5;
+}
+
+.categoriesList {
+    flex: 1;
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+.mainButtons {
+    padding-bottom: 20px;
+}
+
+.accordion {
+    width: 80%;
+}
+
+.dataInput {
+    position: relative;
+    height: 50px;
+    width: 290px;
+}
+
+.btn {
+    position: absolute;
+    bottom: 5;
+    right: 0;
+}
+
+.inputCategory {
+    position: absolute;
+    bottom: 0;
+}
+.categoriesWrap{
+    width:20%;
+}
+.scrollerContainter {
+    height: 500px;
+    width: 100%;
+    flex: 1;
+}
+.categoryInScroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(140, 127, 127, 0.748);
+    box-sizing: border-box;
+    height: 50px;
+}
+
+
+
+/* .example-headers-align .mat-expansion-panel-header-title, .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* .example-headers-align .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+} */

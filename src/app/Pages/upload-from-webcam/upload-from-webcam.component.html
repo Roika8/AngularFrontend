@@ -1,0 +1,25 @@
+<h1>Upload from your local web cam!</h1>
+
+<div class="imagesWrapper">
+    <div class="image">
+        <webcam [height]="400" [width]="1000" [trigger]="triggerObservable" (imageCapture)="handleImage($event)">
+        </webcam>
+    </div>
+    <div class="image">
+        <div class="snapshot" *ngIf="webcamImage">
+            <img [src]="webcamImage.imageAsDataUrl" class="snappedImage" />
+        </div>
+    </div>
+</div>
+
+<div class="btnsWrapper">
+    <button mat-raised-button class="actionBtn" (click)="triggerSnapshot();">
+        Click Here and take the Shot
+    </button>
+
+    <div *ngIf="webcamImage">
+        <button class="sumbitBtn" (click)="SubmitImage()" routerLink="/image-setup">
+            Submit image
+        </button>
+    </div>
+</div>
